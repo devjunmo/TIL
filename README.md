@@ -7,8 +7,9 @@
 
 ## Spring
 
-- Dependency Injection
-  - [테스트 코드 작성]()
+- 스프링의 원리
+  - [Inversion of control](Spring/스프링의_원리/IoC.md)
+  - [Dependency injection]()
 
 ## Test
 
