@@ -5,6 +5,14 @@
 - 객체지향 프로그래밍
   - [SOLID 원칙](Java/객체지향_프로그래밍/SOLID원칙.md)
 
+## Web Backend 기본
+- 웹 서버와 웹 컨테이너
+- 서블릿
+  - [서블릿이란?](WebBackendBasic/Servlet.md)
+  - 서블릿과 메모리
+
+
+
 ## Spring
 
 - 스프링의 원리
