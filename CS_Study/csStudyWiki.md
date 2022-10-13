@@ -1,1 +1,1 @@
-# ✅ CS Study Wiki
+# ✅ CS Study
