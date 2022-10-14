@@ -1,7 +1,7 @@
 # Today I Learned (TIL) 🚩
 
 ## Java
-
+- [Java 동작과정](Java/JavaProcess.md)
 - 객체지향 프로그래밍
   - [SOLID 원칙](Java/객체지향_프로그래밍/SOLID원칙.md)
 
