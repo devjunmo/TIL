@@ -39,6 +39,8 @@
 ## Security
 - [보안 알고리즘](/Security/EncryptionAlgorithms.md)
 
+## CS Study 내용정리
+- [CS study wiki](/CS_Study/csStudyWiki.md)
 
 ## Markdown
 
