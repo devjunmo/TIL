@@ -37,10 +37,10 @@ $("#memberInsertBtn").click(function () {
 });
 ```
 
-제이쿼리 AJAX 코드를 통해 post방식으로 서버로 데이터를 보냈고, .shop으로 들어갔으므로 web.xml과 servlet-context.xml을 참고하여 서블릿 객체를 만들고, 들어온 url을 받아서 스프링 컨테이너의 도움으로 컨트롤러의 아래 메소드로 들어온다
+제이쿼리 AJAX 코드를 통해 post방식으로 서버로 데이터를 보냈고, .shop으로 들어갔으므로 web.xml과 servlet-context.xml을 참고하여 서블릿 객체를 만들고, 들어온 url을 받아서 스프링 컨테이너가 아닌!!! 디스패셔 서블릿의 커맨드패턴으로 컨트롤러의 아래 메소드로 들어온다
 
 ```java
-	@RequestMapping(value = "memberInsert.shop", method = RequestMethod.GET, produces="application/text;charset=utf-8")
+	@RequestMapping(value = "memberInsert.shop", method = RequestMethod.POST, produces="application/text;charset=utf-8")
 	@ResponseBody
 	public String memberInsert(Member m) {
 
@@ -53,7 +53,7 @@ $("#memberInsertBtn").click(function () {
 
 ```
 
-- 위의 @RequestMapping 어노테이션은 말 그대로 들어온 리퀘스트를 맵핑하는데, memberInsert.shop으로 url이 넘어왔으면서, 겟방식인 요청을 받고, 인코딩은 utf-8로 해준다.
+- 위의 @RequestMapping 어노테이션은 말 그대로 들어온 리퀘스트를 맵핑하는데, memberInsert.shop으로 url이 넘어왔으면서, POST방식인 요청을 받고, 인코딩은 utf-8로 해준다.
 - @ResponseBody 어노테이션은 out 버퍼에 데이터 조각을 담아 보내겠다는것을 스프링에 알려주는 역할을 한다. (html 구조 전체가 아닌 스트링과 같은 데이터 조각!)
 - 여기서 재미있는점은 자바 빈 기술인데, memberInsert 메소드의 파라미터가 Member를 받는다. 이것은 서버로 들어온 데이터 스트림의 순서(name, id, pw)와 파라미터에 열려있는 Member 객체(자바 빈)의 필드의 순서가 정확히 일치하고, 디폴트 생성자가 있으며 셋겟 메소드가 있다면 자동으로 저 파라미터 m에 데이터가 맵핑되는 점이다. 때문에 뭘 할필요도 없이 바로 m.getName()을 할수가 있음.
 
