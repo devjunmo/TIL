@@ -5,6 +5,8 @@
 - [Java 동작과정](Java/JavaProcess.md)
 - 객체지향 프로그래밍
   - [SOLID 원칙](Java/객체지향_프로그래밍/SOLID원칙.md)
+  - Java 디자인 패턴
+    - [Adapter 패턴](Java/객체지향_프로그래밍/AdapterPattern.md)
 
 ## Web Backend 기본
 
