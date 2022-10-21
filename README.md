@@ -23,6 +23,7 @@
 - 스프링 레거시
   - 일반 자바로 스프링 사용하기
   - [스프링 레거시 MVC](Spring/SpringLegacy/SpringLegacy_MVC.md)
+  - [스프링 레거시 MVC 프로젝트 - 게시판](Spring/SpringLegacy/BoardPrj_ssafy.md)
 - 스프링 사용하기
   - [Spring container와 Spring Bean](Spring/스프링_사용하기/SpringContainer_and_bean.md)
   - [spring bean 꺼내기](Spring/스프링_사용하기/GetSpringBean.md)
