@@ -14,6 +14,7 @@
 - 서블릿
   - [서블릿이란?](WebBackendBasic/Servlet.md)
   - 서블릿과 메모리
+- [REST API](WebBackendBasic/REST_API.md)
 
 ## Spring
 
