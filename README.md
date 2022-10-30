@@ -25,8 +25,11 @@
   - 일반 자바로 스프링 사용하기
   - [스프링 레거시 MVC](Spring/SpringLegacy/SpringLegacy_MVC.md)
 - 스프링 사용하기
+  - [스프링 쓰면서 애매한 부분 정리](Spring/스프링_사용하기/스프링_애매한부분_정리.md)
   - [Spring container와 Spring Bean](Spring/스프링_사용하기/SpringContainer_and_bean.md)
   - [spring bean 꺼내기](Spring/스프링_사용하기/GetSpringBean.md)
+- Spring boot
+  - [spring boot만의 특징](Spring/SpringBoot/스프링부트_특징.md)
 
 ## Test
 
@@ -49,6 +52,9 @@
 ## CS Study 내용정리
 
 - [CS study wiki](/CS_Study/csStudyWiki.md)
+
+## Git
+
 
 ## Markdown
 
