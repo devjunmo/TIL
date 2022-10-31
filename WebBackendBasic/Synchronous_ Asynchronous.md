@@ -12,12 +12,14 @@
 
 ## 서버에서 리스폰스 객체의 out buffer에 데이터를 담는 상황
 ![서버에서out버퍼에적재](/img/backendBasic/동기비동기서버.jpg)
-- PrintWriter 객체를 response객체로 부터 받고 해당 out buffer에 서버에서 생성된 데이터 (jsp, JSON, xml 등등...)를 담는다.
+- 위 그림은 http response 데이터를 자바 객체로 흉내낸 httpServletResponse 객체임.
+- 서블릿에서 PrintWriter 객체를 http response '자바 객체'로 부터 받고 해당 out buffer에 서버에서 생성된 데이터 (jsp, JSON, xml 등등...)를 해당 객체의 out buffer 부분에 담는다. 
+- 데이터가 모두 담긴 http response객체는 웹컨테이너에서 http response(자바 객체 아님)로 변환하여 웹서버로 전달하고, 전달된 http response는 클라이언트로 송신된다.
 
 
 ## 동기, 비동기 상황에서 클라이언트가 데이터를 받는 상황 
 ![동기,비동기](/img/backendBasic/동기비동기클라.jpg)
-- 비동기일때 fetch로 요청을 보내고, 들어온 resp객체의 out버퍼에 들어있는 data를 활용하여 내가 원하는 태그 범위를 수정한다.
+- 비동기일때 fetch로 요청을 보내고, 서버로 부터 들어온 http response(자바 객체 아님)의 out버퍼에 들어있는 data를 활용하여 내가 원하는 뷰 태그의 범위를 수정한다.
   - 원하는 범위를 수정하는것이므로, 전체가 될수도 있는 부분임. 하지만 비동기 특성상 일부분을 치환하는것이 더 적절함.
-- 동기일때 쿼리파라미터나 html 폼태그를 통해 요청을 보내고, 서버로부터 들어온 resp객체의 out버퍼에 들어있는 data를 활용하여(위의 비동기와 같음) 화면 전체를 갱신한다. (원래 있던 화면을 없애고 새로 화면을 찍음)
+- 동기일때 쿼리파라미터나 html 폼태그를 통해 요청을 보내고, 서버로 부터 들어온 http response(자바 객체 아님)의 out버퍼에 들어있는 data를 활용하여(위의 비동기와 같음) 화면 전체를 갱신한다. (원래 있던 화면을 없애고 새로 화면을 찍음)
   - 잘 갖춰진 html 폼으로 전체를 갱신하는것과, 한줄만 찍 갱신하는것 둘 중 전자가 훨씬 적절함. 
