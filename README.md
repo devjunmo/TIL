@@ -15,6 +15,7 @@
   - [서블릿이란?](WebBackendBasic/Servlet.md)
   - 서블릿과 메모리
 - [REST API](WebBackendBasic/REST_API.md)
+- [동기, 비동기 정리](WebBackendBasic/Synchronous_%20Asynchronous.md)
 
 ## Spring
 
@@ -52,6 +53,7 @@
 ## CS Study 내용정리
 
 - [CS study wiki](/CS_Study/csStudyWiki.md)
+
 
 ## Git
 
