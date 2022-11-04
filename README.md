@@ -56,6 +56,7 @@
 
 ## Vue.js
 - [Vue.js 기초](/Vue/vue기초.md)
+- [Javascript(ES6)와 Vue](Vue/ES6와Vue.md)
 
 
 ## Git
