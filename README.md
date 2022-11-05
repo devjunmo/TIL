@@ -16,6 +16,7 @@
   - 서블릿과 메모리
 - [REST API](WebBackendBasic/REST_API.md)
 - [동기, 비동기 정리](WebBackendBasic/Synchronous_%20Asynchronous.md)
+- [HTTP와 웹](WebBackendBasic/HTTP와_웹.md)
 
 ## Spring
 

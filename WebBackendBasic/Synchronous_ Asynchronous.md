@@ -1,4 +1,4 @@
-# 동기(Synchronous), 비동기(Asynchronous)
+# 동기(Synchronous), 비동기(Asynchronous) 요청 흐름
 
 ## 동기방식 큰그림 
 ![동기](/img/backendBasic/동기.jpg)
