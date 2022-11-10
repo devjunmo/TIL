@@ -289,3 +289,101 @@ export default {
 - 부모가 goWriteForm 시그널을 받은 후 showBoardList: false, showBoardWrite: true를 통해 작성 컴포넌트를 출력한다.
 - 버튼을 하나 만들어서 생성한 데이터를 emit으로 부모에 올려줄 메소드를 만들고, showBoard라는 이름의 이벤트를 작성한 게시글 객체와 함께 부모로 넘겨준다.
 - 부모는 넘겨받은 데이터를 게시글 리스트에 push해주고 showBoardList: true, showBoardWrite: false로 다시 변경해주어 게시판 리스트를 출력해준다.
+
+## ✒︎ Board Component 구현 - Vue의 라우팅으로 화면전환 해보기
+
+### ❆ /src/router/index.js
+
+라우팅 설정 부분 수정 -> redirect 지정과 children 지정.
+
+```javascript
+{
+    path: "/board",
+    name: "board",
+    component: BoardView,
+    redirect: "/board/list",
+    children: [
+      {
+        path: "list",
+        name: "boardlist",
+        component: () => import("@/components/board/BoardList"),
+      },
+      {
+        path: "write",
+        name: "boardwrite",
+        component: () => import("@/components/board/BoardWrite"),
+      },
+    ],
+  },
+```
+
+- children을 통해 라우터 설정부에서 자식 컴포넌트들을 임포트 해준다
+
+### ❆ /src/views/BoardView.vue
+
+- 라우팅을 통해 화면을 전환할것이므로 `<board-list>`와 `<board-write>` 를 제거해준다.
+- v-if 디렉티브를 쓰지 않을 것 이므로, boolean으로 쓰던 변수들을 제거한다
+- 서버에서 그때그때 데이터를 조회하지 않고, 클라이언트에서 데이터를 전달하는 형태를 만들어야 한다.
+- board list를 띄우는 일은 boardlist 컴포넌트에게 위임하기로 한다. 관련 변수, 함수는 view에서 제거한다.
+- BoardView에서 BoardList로 리다이렉션을 하게하여 기본 출력 화면을 BoardList로 설정한다.
+
+### ❆ /src/components/board/BoardList.vue
+
+```javascript
+
+// 라우팅시 객체가 새로 찍히는데, 초기화 방지를 위해 뺌
+const boardListRepo = [
+        { no: 1, title: "t1", contents: "aaa" },
+        { no: 2, title: "t2", contents: "bbb" },
+];
+
+export default {
+  name: "BoardList",
+
+  data() {
+    return {
+      boardList: boardListRepo,
+    }
+  },
+```
+
+- BoardList로 흐름이 전달되면, 객체가 새로 찍히는데, 이때 초기화 되는것을 방지하기 위해 export default 외부로 변수를 빼준다.
+- 그리고 나서 boardList라는 이름으로 게시판 정보를 저장한다.
+
+```javascript
+methods: {
+  writeBoard() {
+    // this.$emit("goWriteForm");
+    this.$router.push({name:'boardwrite'})
+  },
+},
+```
+
+- 글작성 버튼을 누르면 name이 boardwrite인 곳으로 routs/index.js를 참고하여 화면을 전환시킨다.
+
+### ❆ /src/components/board/BoardWrite.vue
+
+```javascript
+methods: {
+  writeBoard() {
+    this.$router.push({ name: "boardlist", params: { newRow: { title: this.title, contents: this.contents } } });
+  },
+},
+```
+
+- 사용자로부터 입력받은 데이터를 다시 boardlist라는 이름인 곳으로 routs/index.js를 참고하여 화면을 전환시킨다.
+- 이때 params 인자에 새로 생성된 row 정보를 js 객체로 구성해서 같이 태워보낸다.
+
+### ❆ 다시 /src/components/board/BoardList.vue
+
+```javascript
+created() {
+  // 라우팅 될때마다 뷰 객체 생성
+  let newRow = this.$route.params.newRow;
+  if (Object.keys(newRow).length > 0) {
+    this.boardList.push({ no: boardListRepo.length, ...newRow })
+  }
+},
+```
+
+- 전달되어 들어온 new row를 꺼내 쓰는데, 객체가 비어있는지 체크를 해서 정보가 들어있을때만 게시글 리스트에 push 해준다.
