@@ -6,6 +6,11 @@
 - 이것은 통신을 맺고 끊는 과정에서 송신자와 수신자간 연결이 확실히 맺어졌는지 확인을 한다는 의미이다.
 - 통신을 맺을때 사용하는 방식은 3-way handshake를, 끊을때 사용하는 방식은 4-way handshake를 사용한다.
 
+## 용어 정리
+- ISN(Initial Sequence Number): 맨 처음 클라이언트가 서버로 보내는 SYN. 고유한 32비트 시퀀스 번호. TCP 연결을 통해 전송되는 다른 데이터 바이트와 충돌하지 않는 시퀀스 번호 할당.
+- SYN: Synchronizaion. 연결 요청 플래그
+- ACK: Acknowledgement. 응답 플래그
+
 ## ✒︎ 3-way handshake
 
 ![TCP_3wayhandshake2](/img/3way_ref.png)
