@@ -9,3 +9,7 @@
   - [Routing](/CS_Study/Network/)
   - [IP주소, MAC주소](/CS_Study/Network/IP주소MAC주소.md)
   - [IP 주소체계, IPv4, IPv6](/CS_Study/Network/IPv4_IPv6.md)
+  - [Classful IP Addressing](/CS_Study/Network/classfulIPAddressing.md)
+  - [Classless IP Addressing](/CS_Study/Network/classfulIPAddressing.md)
+  - [공인IP, 사설IP](/CS_Study/Network/publicPrivateIP.md)
+
