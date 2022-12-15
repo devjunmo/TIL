@@ -17,6 +17,14 @@
 - 서버와 클라이언트간 뿐만 아니라 서버와 서버간 데이터 송수신에도 사용됨.
 - HTTP 1.1버전에 필요한 거의 모든 기능이 있고, 1.1버전의 성능을 개선한것이 HTTP 2버전, TCP대신 UDP를 사용한것이 3버전.(1.1, 2버전은 TCP로 동작함)
 
+## HTTP version
+- HTTP1.x
+  - stateless하므로 패킷 왕복시간인 RTT의 증가, keep -alive 옵션을 통해 보완, HOL(Head Of Line blocking, 같은 큐의 패킷이 첫 패킷에 의해 지연되는 현상)은 극복실패
+- HTTP2
+  - 멀티플렉싱(여러 스트림으로 송수신), 클라이언트 요청 없이 서버에서 데이터를 보내는 서버푸쉬 
+- HTTP3
+  - QUIC 계층위에서 돌아가며 UDP기반이므로 첫 연결시 1RTT로 가능, 멀티플렉싱기능, Forward Error Correction(순방향 오류 수정 메커니즘, 패킷 손실시 수신측에서 에러를 검출 및 수정)
+
 ## ✒︎ HTTP 특징
 - Stateless
   - Stateless란 클라이언트의 상태를 저장하지 않는다는것.
@@ -73,6 +81,7 @@ CRLF
 
 
 ## ✒︎ HTTP Method
+
 ### ❆ URI는 리소스 식별만 하고, 행위는 메소드로 분리한다.
 - URI: /members/{id}  -> id에 해당하는 멤버를
 - Method: C(POST) R(GET) U(PUT,PATCH) D(DELETE) 해주세요 
@@ -119,6 +128,12 @@ CRLF
   - 응답 결과를 웹브라우저가 캐시해서 사용해도 되는가에 대한것
     - GET, HEAD, POST, PATCH -> 캐시 가능
     - 실제로는 GET, HEAD정도만 캐시로 사용. (POST, PATCH는 구현이 어려움)
+
+
+### ❆ HTTP 메소드 활용과 URI 설계
+- 클라이언트에서 서버로 데이터를 전송하는 방식은 쿼리 파라미터로 넘기거나(GET) Message body에 담아서 보내거나(POST, PUT, PATCH)
+- 
+- 
 
 
 ## 참고자료
