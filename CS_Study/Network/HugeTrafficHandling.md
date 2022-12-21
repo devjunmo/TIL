@@ -34,7 +34,7 @@
      - Client → Load Balancer의 Access 제한 가능
 
 < 참고 링크 >
-https://docs.aws.amazon.com/ko_kr/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html
+https://dev.classmethod.jp/articles/load-balancing-types-and-algorithm/
 
 ## 서킷 브레이커
 MSA에서 한 서비스가 오류가 생길 때 의존관계가 있는 다른 서비스까지 장애 cascading이 생길 수 있다. 이것을 막기위해 외부 서비스와 연결을 차단하고 복구하는 과정을 서킷 브레이커라 한다. 
