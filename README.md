@@ -39,6 +39,12 @@
   - [Junit5](/Test/Junit5/Junit5.md)
   - [Junit5 사용하기](/Test/Junit5/Use_Junit5.md)
 
+## Database
+
+- Database 설계
+  - [ERD](/Database/설계/ERD.md)
+
+
 ## Algorithm
 
 - 알고리즘 문제풀이
