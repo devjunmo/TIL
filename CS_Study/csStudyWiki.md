@@ -20,3 +20,4 @@
   - [Network devices](/CS_Study/Network/NetworkDevices.md)
   - [대규모 트래픽으로 인한 서버 과부하 해결](/CS_Study/Network/HugeTrafficHandling.md)
   - [정규화](/CS_Study/DB/Normalization.md)
+  - [가상메모리](/CS_Study/OS/가상메모리.md)
