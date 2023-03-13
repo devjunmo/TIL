@@ -23,6 +23,7 @@
 - 스프링의 원리
   - [Inversion of control](Spring/스프링의_원리/IoC.md)
   - [Dependency injection](Spring/스프링의_원리/DI.md)
+  - [스프링MVC 동작과정](Spring/스프링의_원리/스프링MVC_동작과정.md)
 - 스프링 레거시
   - 일반 자바로 스프링 사용하기
   - [스프링 레거시 MVC](Spring/SpringLegacy/SpringLegacy_MVC.md)
